@@ -1,9 +1,16 @@
 using System;
 
+// Exceeding Requirements
+// Added the "Entry #" information so that each entry is counted.
+// Added "encouragements" that give positive reinforcement each time an entry is completed. These are displayed in yellow in the console.
+// Not sure if this counts, but I accounted for the use of punctuation by using tab separation (\t) rather than commas, semi-colons, etc.
+// Thank you for reading (both this comment and the code)!
+
 class Program
 {
     static void Main(string[] args)
     {
+        
         Journal journal = new Journal();
         
         int choice = 0;
