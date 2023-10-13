@@ -40,8 +40,10 @@ public class Journal
 
         Console.Write($"{prompts[i]}\n> ");
         userInput._response = Console.ReadLine();
+        
+        int j = random.Next(encouragements.Count);
         Console.ForegroundColor = ConsoleColor.Yellow; 
-        Console.WriteLine($"{encouragements[i]}\n");
+        Console.WriteLine($"{encouragements[j]}\n");
         Console.ForegroundColor = ConsoleColor.White;
 
         entries.Add(userInput);
