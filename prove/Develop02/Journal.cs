@@ -16,12 +16,6 @@ public class Journal
         "What is something you learned today?",
         "Write a spiritual thought or impression you had today.",
 
-        // Adding some of the example prompts for more variety
-        "Who was the most interesting person you interacted with today?",
-        "How did you see the hand of the Lord in my life today?",
-        "What was the strongest emotion you felt today?",
-        "If you had one thing you could do over today, what would it be?"
-
     };
 
     // Silly little "encouragements" meant to make you feel good for writing something.
