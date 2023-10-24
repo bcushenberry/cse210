@@ -3,12 +3,12 @@ using System;
 public class Journal
 {
     // Initializing the list of entries, the date/time used in the entries, and the random number used to give a random prompt
-    List<Entry> entries = new List<Entry>();
-    DateTime currentDate = DateTime.Now;
-    Random random = new Random();
+    private List<Entry> _entries = new List<Entry>();
+    private DateTime _currentDate = DateTime.Now;
+    private Random _random = new Random();
 
     // The list of prompts
-    List<string> prompts = new List<string>
+    List<string> _prompts = new List<string>
     {
         "What was your favorite thing about today?",
         "What was one thing you didn't do today that you wish you would have?",
@@ -19,7 +19,7 @@ public class Journal
     };
 
     // Silly little "encouragements" meant to make you feel good for writing something.
-    List<string> encouragements = new List<string>
+    List<string> _encouragements = new List<string>
     {
         "Interesting!",
         "Good answer!",
@@ -31,30 +31,29 @@ public class Journal
     public void NewEntry()
     {
         Entry userInput = new Entry();
-        userInput._dateText = currentDate.ToShortDateString();
+        int i = _random.Next(_prompts.Count);
+        int j = _random.Next(_encouragements.Count);
 
-        userInput._entryNumber = entries.Count +1;
+        userInput._entryNumber = _entries.Count +1;
+        userInput._dateText = _currentDate.ToShortDateString();
+        userInput._prompt = _prompts[i];
 
-        int i = random.Next(prompts.Count);
-        userInput._prompt = prompts[i];
-
-        Console.Write($"{prompts[i]}\n> ");
+        Console.Write($"{userInput._prompt}\n> ");
         userInput._response = Console.ReadLine();
         
-        int j = random.Next(encouragements.Count);
         Console.ForegroundColor = ConsoleColor.Yellow; 
-        Console.WriteLine($"{encouragements[j]}\n");
+        Console.WriteLine($"{_encouragements[j]}\n");
         Console.ForegroundColor = ConsoleColor.White;
 
-        entries.Add(userInput);
+        _entries.Add(userInput);
     }
     
     public void DisplayEntries()
     {
         Console.WriteLine("");
-        foreach (Entry entry in entries)
+        foreach (Entry entry in _entries)
         {
-            Console.WriteLine($"Entry #{entry._entryNumber}\tDate: {entry._dateText}\nPrompt: {entry._prompt}\nResponse: {entry._response}\n");
+            entry.Display();
         }
     }
 
@@ -65,9 +64,9 @@ public class Journal
 
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            foreach (Entry entry in entries)
+            foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._entryNumber}\t{entry._dateText}\t{entry._prompt}\t{entry._response}");
+                outputFile.WriteLine(entry.GetOutput());
             }
         }
         Console.WriteLine("");        
@@ -78,7 +77,7 @@ public class Journal
         Console.WriteLine("What is the file name?");
         string fileName = Console.ReadLine();
 
-        entries.Clear();
+        _entries.Clear();
 
         string[] loadedEntries = File.ReadAllLines(fileName);
 
@@ -92,7 +91,7 @@ public class Journal
             newEntry._prompt = lines[2];
             newEntry._response = lines[3];
 
-            entries.Add(newEntry);
+            _entries.Add(newEntry);
         }
         Console.WriteLine("");
     }
