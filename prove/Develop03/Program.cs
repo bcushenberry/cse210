@@ -23,10 +23,26 @@ class Program
         int i = random.Next(scriptures.Count());
         scriptures[i].DisplayScripture();
 
+
+// Fixed Code:
+while (true)
+{
+    Console.Write("Press enter to continue or type \"quit\" to finish:\n");
+
+    if (Console.ReadLine() == "quit" || scriptures[i].AllHidden() == true)
+    {
+        break;
+    }
+
+    Console.Clear();
+    scriptures[i].HideWords();
+    scriptures[i].DisplayScripture();
+}
+
+// Original Code: 
+/*
         Console.Write("Press enter to continue or type \"quit\" to finish:\n");
 
-// I realize the following loop has issues.
-// Please see note at bottom.
         bool keepLooping = true;
         do
         {
@@ -44,6 +60,8 @@ class Program
         }
         while (keepLooping);
     }
+*/
+
 /*
 The code here is probably the millionth variation of it that I've tried,
 but it still doesn't match the sample video perfectly and I can't figure out how to fix it.
@@ -60,7 +78,7 @@ and to quit, you have to first press enter once, and then type "quit" and enter.
 
 I haven't figured out how to structure the code so that it doesn't do this.
 Everything I've tried has failed in some way or produced the same results.
-I'm sure the solution is simple, but for some reason I'm just not seeing.
+I'm sure the solution is simple, but for some reason I'm just not seeing it.
 
 Also, the reason I'm using a bool for the loop is that in the sample video,
 once the scripture is completely hidden, you have to press enter again for the program to exit.
@@ -68,4 +86,5 @@ once the scripture is completely hidden, you have to press enter again for the p
 In my other attempts at this loop, the program would automatically close once the scripture was hidden,
 so I changed it to using a bool so that the experience would match the sample video.
 */
+    }
 }
