@@ -1,7 +1,7 @@
 public class GratitudeActivity : Activity
 {
 // --- Attributes ---
-    private string userInput;
+    private string _userInput;
 
 // --- Constructor ---
     public GratitudeActivity(string name, string description) : base (name, description)
@@ -28,7 +28,7 @@ public class GratitudeActivity : Activity
 
         Console.WriteLine("What is one thing that happened today that you are grateful for, and why?");
         Console.Write("> ");
-        userInput = Console.ReadLine();
+        _userInput = Console.ReadLine();
 
         DateTime endTime = DateTime.Now;
         TimeSpan writingTime = endTime - startTime;
@@ -41,7 +41,7 @@ public class GratitudeActivity : Activity
 
         if (saveToFile == "y" || saveToFile == "yes" || saveToFile == "Y")
         {
-            OutputToFile(userInput);
+            OutputToFile(_userInput);
             Console.WriteLine("\nSave complete!\n");
         }
        
