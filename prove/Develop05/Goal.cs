@@ -8,6 +8,7 @@ public class Goal
     protected string _name;
     protected string _description;
 
+// --- Constructor ---
     public Goal(string type, string name, string description, int points)
     {
         _type = type;
@@ -16,6 +17,7 @@ public class Goal
         _points = points;
     }
 
+// --- Methods ---
     public virtual void Display()
     {
 
