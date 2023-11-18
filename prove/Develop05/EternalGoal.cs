@@ -11,7 +11,7 @@ public class EternalGoal : Goal
 // --- Methods ---
     public override void Display()
     {
-        Console.WriteLine($"[∞] {_name} ({_description}) -- Times completed: {_timesCompleted}");        
+        Console.WriteLine($"[ ] {_name} ({_description}) -- Times completed: {_timesCompleted}");        
     }
 
     public override int Record()
