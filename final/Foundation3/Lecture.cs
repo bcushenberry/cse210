@@ -11,11 +11,11 @@ public class Lecture : Event
 
     public override string GetShortDesc()
     {
-        return $"Event Type: Lecture\nTitle: {_title}\nDescription: {_description}\nDate/Time: {_date}";
+        return $"Title: {_title}\nEvent Type: Lecture\nDescription: {_description}\nDate/Time: {_date}";
     }
 
     public override string GetFullDetails()
     {
-        return $"{GetStandardDesc()}\nSpeaker: {_speaker}\nCapacity: {_capacity} people";
+        return $"{GetStandardDesc()}\n\nSpeaker: {_speaker}\nCapacity: {_capacity} people";
     }
 }

@@ -9,11 +9,11 @@ public class OutsideMtg : Event
 
     public override string GetShortDesc()
     {
-        return $"Event Type: Outside Meeting\nTitle: {_title}\nDescription: {_description}\nDate/Time: {_date}";
+        return $"Title: {_title}\nEvent Type: Outside Meeting\nDescription: {_description}\nDate/Time: {_date}";
     }
 
     public override string GetFullDetails()
     {
-        return $"{GetStandardDesc()}\nForecast: {_forecast}";
+        return $"{GetStandardDesc()}\n\nForecast: {_forecast}";
     }
 }

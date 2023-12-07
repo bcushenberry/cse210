@@ -18,7 +18,7 @@ public class Event
 // --- Behaviors
     public string GetStandardDesc()
     {
-        return $"Title: {_title}\nDescription: {_description}\nDate/Time: {_date}\nAddress: {_address.GetAddress()}";
+        return $"Title: {_title}\nDescription: {_description}\nDate/Time: {_date}\n\nAddress: {_address.GetAddress()}";
     }
 
     public virtual string GetShortDesc()
@@ -28,6 +28,6 @@ public class Event
 
     public virtual string GetFullDetails()
     {
-        return $"Title: {_title}\nDescription: {_description}\nDate/Time: {_date}\nAddress: {_address.GetAddress()}";
+        return $"Title: {_title}\nDescription: {_description}\nDate/Time: {_date}\n\nAddress: {_address.GetAddress()}";
     }
 }

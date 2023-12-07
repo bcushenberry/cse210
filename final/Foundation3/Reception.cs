@@ -9,11 +9,11 @@ public class Reception : Event
 
     public override string GetShortDesc()
     {
-        return $"Event Type: Reception\nTitle: {_title}\nDescription: {_description}\nDate/Time: {_date}";
+        return $"Title: {_title}\nEvent Type: Reception\nDescription: {_description}\nDate/Time: {_date}";
     }
 
     public override string GetFullDetails()
     {
-        return $"{GetStandardDesc()}\nRSVP to {_rsvp}";
+        return $"{GetStandardDesc()}\n\nRSVP to {_rsvp}";
     }
 }

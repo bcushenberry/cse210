@@ -21,12 +21,21 @@ class Program
         Console.WriteLine("====================");
         foreach (Event ev in events)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Short Description");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(ev.GetShortDesc());
-            Console.WriteLine("--------------------");
+            Console.WriteLine("");
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Standard Description");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(ev.GetStandardDesc());
-            Console.WriteLine("--------------------");
+            Console.WriteLine("");
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Full Details");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(ev.GetFullDetails());
             Console.WriteLine("====================");
         }
