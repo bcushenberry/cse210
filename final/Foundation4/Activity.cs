@@ -13,7 +13,7 @@ public class Activity
 
     public string GetSummary()
     {
-        return $"{_date.ToShortDateString()} {_activityName} ({_minutes} min) - Distance {string.Format("{0:0.00}", GetDistance())} km, Speed {string.Format("{0:0.0}", GetSpeed())} kph, Pace: {string.Format("{0:0.0}", GetPace())} min per km";
+        return $"{_date.ToShortDateString()} {_activityName} ({_minutes} min) - Distance {string.Format("{0:0.00}", GetDistance())} km, Speed {string.Format("{0:0.00}", GetSpeed())} kph, Pace: {string.Format("{0:0.00}", GetPace())} min per km";
     }
 
     public virtual double GetDistance()
